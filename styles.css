@@ -7,9 +7,9 @@ body{
     width: 50%;
     height: 60%;
     min-width: 300px;
-    max-width: 500px;
-    min-height: 400px;
-    max-height: 700px;
+    min-height: 440px;
+    max-width: 450px;
+    max-height: 660px;
     display: flex;
     flex-direction: column;
     background-color: grey;
@@ -29,16 +29,16 @@ body{
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
-    padding: 10px;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .button{
     display: flex;
     flex-basis: 20%;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
 
