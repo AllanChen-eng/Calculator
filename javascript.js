@@ -9,30 +9,30 @@ function add(a, b) {
   return (parseFloat(a) + parseFloat(b)).toString();
 }
 function subtract(a, b) {
-  return a-b;
+  return a - b;
 }
 function multiply(a, b) {
-  return a*b
+  return a * b;
 }
 function divide(a, b) {
-  if(b==0) return "DIVIDE BY 0 ERR"
-  else return a/b;
+  if (b == 0) return "DIVIDE BY 0 ERR";
+  else return a / b;
 }
 function operate(num, num2, operator) {
-  if(num == "" || num2 == "" || operator == "") return "ERR";
+  if (num == "" || num2 == "" || operator == "") return "ERR";
   switch (operator) {
     case "+":
-      clear()
-      return add(num,num2);
+      clear();
+      return add(num, num2);
     case "-":
-      clear()
-      return subtract(num,num2);
+      clear();
+      return subtract(num, num2);
     case "x":
-      clear()
-      return multiply(num,num2);
+      clear();
+      return multiply(num, num2);
     case "/":
-      clear()
-      return divide(num,num2);
+      clear();
+      return divide(num, num2);
   }
 }
 
@@ -67,7 +67,7 @@ function setButtons() {
   });
 }
 function onclick(string) {
-  if(string == '') return;
+  if (string == "") return;
   if (string == "A/C") {
     clear();
     display(0);
@@ -75,13 +75,16 @@ function onclick(string) {
   }
   if (operatorList.includes(string)) {
     // an operator was pressed
-    if (!operatorPresent) { // if there's no operator
+    if (!operatorPresent) {
+      // if there's no operator
       operator = string;
       operatorPresent = true;
-    } else if (number2 == ``) { //if there's no number2
+    } else if (number2 == ``) {
+      //if there's no number2
       clear();
       display("ERR");
-    } else { // if it has everything
+    } else {
+      // if it has everything
       number1 = operate(number1, number2, operator);
       operator = string;
       operatorPresent = true;
@@ -98,14 +101,9 @@ function onclick(string) {
       display(number1);
     }
   }
-  if(string == "="){
-    display(operate(number1,number2,operator));
+  if (string == "=") {
+    display(operate(number1, number2, operator));
     clear();
   }
-
-  // if no operator -> set operator OR add to number 1
-  // if operator present -> operate() on equation if operator or add to number 2
 }
-// everytime a button is clicked, the display should be updated
-//get a hover effect on the buttons
 makeCalculator();
